@@ -5,11 +5,9 @@ import './scss/styles.scss';
 
 function App() {
 	return (
-		<div>
-			<Routes>
-				<Route exact path='/' element={<Home />} />
-			</Routes>
-		</div>
+		<Routes>
+			<Route exact path='/' element={<Home />} />
+		</Routes>
 	);
 }
 

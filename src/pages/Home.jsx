@@ -1,10 +1,13 @@
-import { Menu } from "../components/Menu/Menu";
-import { Stadium } from "../components/Stadium/Stadium";
+import { useCycle } from 'framer-motion';
+import { Menu } from '../components/Menu/Menu';
+import { Stadium } from '../components/Stadium/Stadium';
 
 export const Home = () => {
-    return (<div>
-        <Menu/>
-        <Stadium/>
-    </div>);
-}
-
+	const [isOpen, toggleOpen] = useCycle(false, true);
+	return (
+		<div className='home-content'>
+			<Menu isOpen={isOpen} toggleOpen={toggleOpen} />
+			<Stadium isOpen={isOpen} />
+		</div>
+	);
+};
