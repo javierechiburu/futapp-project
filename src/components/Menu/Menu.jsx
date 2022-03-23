@@ -1,5 +1,5 @@
-import { useRef, useEffect } from 'react';
-import { motion, useCycle } from 'framer-motion';
+import { useRef, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { useDimensions } from './use-dimensions';
 import { MenuToggle } from './MenuToggle';
 import { Navigation } from './Navigation';
@@ -37,10 +37,12 @@ export const Menu = ({ isOpen, toggleOpen }) => {
 	const containerRef = useRef(null);
 	const { height } = useDimensions(containerRef);
 	const navContentRef = useRef(null);
-
-	console.log({ height });
+	const [isChanging, setChanging] = useState(false);
 
 	useEffect(() => {
+		setChanging(true);
+		setTimeout(() => setChanging(false), 1200);
+
 		const navEl = navContentRef.current;
 		if (!isOpen) {
 			setTimeout(() => {
@@ -66,7 +68,7 @@ export const Menu = ({ isOpen, toggleOpen }) => {
 				<Navigation variable />
 			</div>
 
-			<MenuToggle toggle={() => toggleOpen()} />
+			<MenuToggle isChanging={isChanging} toggle={() => toggleOpen()} />
 		</motion.nav>
 	);
 };
