@@ -111,17 +111,12 @@ li {
 
 .container-stadium {
 	width: 100%;
-	background-color: $menu-color;
-	border-radius: 1%;
+	background-color: $stadium-color;
 	&.open {
-		margin-left: 370px;
-		margin-right: 70px;
-		margin-top: 70px;
-		margin-bottom: 70px;
-		height: calc(100% - 140px);
+		margin-left: 300px;
 	}
 	&.close {
-		margin: 70px;
-		height: calc(100% - 140px);
+		margin-top: 75px;
+		height: calc(100% - 75px);
 	}
 }

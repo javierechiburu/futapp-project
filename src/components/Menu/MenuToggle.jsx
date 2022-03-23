@@ -1,6 +1,4 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { useEffect } from 'react/cjs/react.production.min';
 
 const Path = (props) => (
 	<motion.path
